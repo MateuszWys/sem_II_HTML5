@@ -2,43 +2,49 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 		<title>Multimedia,animacja i obsluga urzadzen - HTML 5 </title>
-		<link rel="stylesheet" href="zad1.css">
 	</head>
 <body> 
+    <div id="wrapper">
+        <div id='player_wrapper'>
+            <video id='video_player'>          
+        </video>
+            <div id='player_controls'>
+                <button onclick="playVideo()" id="play_button">PLAY</button>
+                <button onclick="pauseVideo()" id="pause_button">PAUSE</button>
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+    <button onclick='choose_video("Whiplas.mp4");'>Whiplas</button></br>
+    <button onclick='choose_video("MORTAL_KOMBAT.mp4");'>MORTAL_KOMBAT</button>
 
-<div style="text-align:center"> 
-  <button onclick="playVideo()">Play</button> 
-  <button onclick="pauseVideo()">Pause</button>
-  <button onclick="makeSmall()">Small</button>
-  <button onclick="makeNormal()">Normal</button>
-  <br><br>
-  <video id="video1" width="420">
-    <source src="Whiplas.mp4" type="video/mp4">
-	  <source src="Whiplas.ogg" type="video/ogg">
-  </video>
-</div> 
-<div>
-</div>
+</body>
 <script> 
-var myVideo = document.getElementById("video1"); 
+document.addEventListener("DOMContentLoaded", function() { start_player(); }, false);
+var player;
 
-function playVideo() { 
-    myVideo.play(); 
-} 
-function pauseVideo() { 
-    myVideo.pause();  
-} 
+function choose_video(name) {
+    player.innerHTML = '';
+    var source = document.createElement('source');
+    player.appendChild(source);
+    source.setAttribute('src', name);
+    player.load();
+    playVideo();
+}
 
-function removeVideo() { 
-    myVideo.width = 320; 
-} 
+function start_player() {
+    player = document.getElementById('video_player');
+    player.controls = false;
+}
 
+function playVideo() {
+    player.play();
+}
+
+function pauseVideo() {
+    player.pause();
+}
 </script> 
-  <ul>
-    <li><p>Trailer filmu Whiplash <a href="https://www.youtube.com/watch?v=7d_jQycdQGo&ab_channel=MovieclipsComingSoon" target="_blank">Link do platformy youtube</a> <button onclick="removeVideo()">Remove</button></p></li>
-    <li><p>Trailer filmu Mortal Kombat <a href="https://www.youtube.com/watch?v=CQufSiC-Hck&ab_channel=WarnerBrosPolska" target="_blank">Link do platformy youtube</a> <button onclick="removeVideo()">Remove</button></p></li>
-  </ul>
-
-
 </body> 
 </html>
