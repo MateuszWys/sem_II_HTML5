@@ -16,15 +16,20 @@
     </div>
     </br>
     </br>
-    <button onclick='choose_video("Whiplas.mp4");'>Whiplas</button></br>
-    <button onclick='choose_video("MORTAL_KOMBAT.mp4");'>MORTAL_KOMBAT</button>
+    <button onclick='video("Whiplas.mp4");'>Whiplas<button onclick="removeVideo()">Remove</button></button></br>
+    <button onclick='video("MORTAL_KOMBAT.mp4");'>MORTAL_KOMBAT <button onclick="removeVideo()">Remove</button></button>
+	</br>
+    </br>
+
+	
+	
 
 </body>
 <script> 
 document.addEventListener("DOMContentLoaded", function() { start_player(); }, false);
 var player;
 
-function choose_video(name) {
+function video(name) {
     player.innerHTML = '';
     var source = document.createElement('source');
     player.appendChild(source);
@@ -45,6 +50,11 @@ function playVideo() {
 function pauseVideo() {
     player.pause();
 }
+function removeVideo() {
+    var myobj = document.getElementById("video_player");
+    myobj.remove();
+}
+</script>
 </script> 
 </body> 
 </html>
