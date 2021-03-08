@@ -12,10 +12,10 @@
   <button onclick="makeSmall()">Small</button>
   <button onclick="makeNormal()">Normal</button>
   <br><br>
-  <!--<video id="video1" width="420">
+  <video id="video1" width="420">
     <source src="Whiplas.mp4" type="video/mp4">
 	  <source src="Whiplas.ogg" type="video/ogg">
-  </video> -->
+  </video>
 </div> 
 
 <script> 
@@ -27,7 +27,7 @@ function playPause() {
   else 
     myVideo.pause(); 
 } 
-
+()
 function makeBig() { 
     myVideo.width = 560; 
 } 
@@ -39,9 +39,15 @@ function makeSmall() {
 function makeNormal() { 
     myVideo.width = 420; 
 } 
+function removeVideo() { 
+    myVideo.del(); 
+} 
 </script> 
+  <ul>
+    <li><p>Trailer filmu Whiplash <a href="https://www.youtube.com/watch?v=7d_jQycdQGo&ab_channel=MovieclipsComingSoon" target="_blank">Link do platformy youtube</a> <button onclick="removeVideo()">Remove</button></p></li>
+    <li><p>Trailer filmu Whiplash <a href="https://www.youtube.com/watch?v=7d_jQycdQGo&ab_channel=MovieclipsComingSoon" target="_blank">Link do platformy youtube</a> <button onclick="removeVideo()">Remove</button></p></li>
+  </ul>
 
-<p>Trailer filmu Whiplash <a href="https://www.youtube.com/watch?v=7d_jQycdQGo&ab_channel=MovieclipsComingSoon" target="_blank">Link do platformy youtube</a>.</p>
 
 </body> 
 </html>
