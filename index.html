@@ -7,8 +7,8 @@
 <body> 
 
 <div style="text-align:center"> 
-  <button onclick="playPause()">Play/Pause</button> 
-  <button onclick="makeBig()">Big</button>
+  <button onclick="playVideo()">Play</button> 
+  <button onclick="pauseVideo()">Pause</button>
   <button onclick="makeSmall()">Small</button>
   <button onclick="makeNormal()">Normal</button>
   <br><br>
@@ -17,35 +17,26 @@
 	  <source src="Whiplas.ogg" type="video/ogg">
   </video>
 </div> 
-
+<div>
+</div>
 <script> 
 var myVideo = document.getElementById("video1"); 
 
-function playPause() { 
-  if (myVideo.paused) 
+function playVideo() { 
     myVideo.play(); 
-  else 
-    myVideo.pause(); 
 } 
-()
-function makeBig() { 
-    myVideo.width = 560; 
+function pauseVideo() { 
+    myVideo.pause();  
 } 
 
-function makeSmall() { 
+function removeVideo() { 
     myVideo.width = 320; 
 } 
 
-function makeNormal() { 
-    myVideo.width = 420; 
-} 
-function removeVideo() { 
-    myVideo.del(); 
-} 
 </script> 
   <ul>
     <li><p>Trailer filmu Whiplash <a href="https://www.youtube.com/watch?v=7d_jQycdQGo&ab_channel=MovieclipsComingSoon" target="_blank">Link do platformy youtube</a> <button onclick="removeVideo()">Remove</button></p></li>
-    <li><p>Trailer filmu Whiplash <a href="https://www.youtube.com/watch?v=7d_jQycdQGo&ab_channel=MovieclipsComingSoon" target="_blank">Link do platformy youtube</a> <button onclick="removeVideo()">Remove</button></p></li>
+    <li><p>Trailer filmu Mortal Kombat <a href="https://www.youtube.com/watch?v=CQufSiC-Hck&ab_channel=WarnerBrosPolska" target="_blank">Link do platformy youtube</a> <button onclick="removeVideo()">Remove</button></p></li>
   </ul>
 
 
