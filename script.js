@@ -73,13 +73,13 @@
         title.textContent = newMovieTitle.value;
         title.className = 'movie__link';
         const up = document.createElement('button');
-        up.textContent = '↑';
+        up.textContent = 'next';
         up.className = 'movie__up-button';
         const down = document.createElement('button');
-        down.textContent = '↓';
+        down.textContent = 'previous';
         down.className = 'movie__down-button';
         const remove = document.createElement('button');
-        remove.textContent = 'Remove';
+        remove.textContent = 'Delete';
         remove.className = 'movie__remove-button';
         movieItem.appendChild(title);
         movieItem.appendChild(up);
