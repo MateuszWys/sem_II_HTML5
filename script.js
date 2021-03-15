@@ -11,6 +11,34 @@
         createNewMovieElement();
     })
 
+    const createNewMovieElement = () => {
+        const movieItem = document.createElement('li');
+        movieItem.className = 'movie';
+        const title = document.createElement('span');
+        title.setAttribute('data-video', newMovieUrl.value);
+        title.textContent = newMovieTitle.value;
+        title.className = 'movie__link';
+        const up = document.createElement('button');
+        up.textContent = 'next';
+        up.className = 'movie__up-button';
+        const down = document.createElement('button');
+        down.textContent = 'previous';
+        down.className = 'movie__down-button';
+        const remove = document.createElement('button');
+        remove.textContent = 'Delete';
+        remove.className = 'movie__remove-button';
+        movieItem.appendChild(title);
+        movieItem.appendChild(up);
+        movieItem.appendChild(down);
+        movieItem.appendChild(remove);
+        movies.push(movieItem);
+        initializeLitenersForMovieItem(movieItem);
+        movieItem.setAttribute('data-index', (movies.length - 1).toString());
+        playlistWrapper.appendChild(movieItem);
+        newMovieUrl.value = '';
+        newMovieTitle.value = '';
+    }
+
     const swapArrayElements = (arr, indexA, indexB) => [arr[indexA], arr[indexB]] = [arr[indexB], arr[indexA]];
 
     const moveUp = (movie) => {
@@ -65,35 +93,6 @@
         setRemoveListener(movieItem);
     }
 
-    const createNewMovieElement = () => {
-        const movieItem = document.createElement('li');
-        movieItem.className = 'movie';
-        const title = document.createElement('span');
-        title.setAttribute('data-video', newMovieUrl.value);
-        title.textContent = newMovieTitle.value;
-        title.className = 'movie__link';
-        const up = document.createElement('button');
-        up.textContent = 'next';
-        up.className = 'movie__up-button';
-        const down = document.createElement('button');
-        down.textContent = 'previous';
-        down.className = 'movie__down-button';
-        const remove = document.createElement('button');
-        remove.textContent = 'Delete';
-        remove.className = 'movie__remove-button';
-        movieItem.appendChild(title);
-        movieItem.appendChild(up);
-        movieItem.appendChild(down);
-        movieItem.appendChild(remove);
-        movies.push(movieItem);
-        initializeLitenersForMovieItem(movieItem);
-        movieItem.setAttribute('data-index', (movies.length - 1).toString());
-        playlistWrapper.appendChild(movieItem);
-        newMovieUrl.value = '';
-        newMovieTitle.value = '';
-
-    }
-
     const renderList = () => {
         playlistWrapper.innerHTML = '';
         movies.forEach((movieItem, idx) => {
@@ -103,6 +102,5 @@
     }
 
     movies.forEach(movie => initializeLitenersForMovieItem(movie));
-
     renderList();
 })();
