@@ -1,60 +1,19 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <link rel="stylesheet" type="text/css" href="zad2.css">
 		<title>Multimedia,animacja i obsluga urzadzen - HTML 5 </title>
 	</head>
+<script src="script.js"></script>
 <body> 
-    <div id="wrapper">
-        <div id='player_wrapper'>
-            <video id='video_player'>          
-        </video>
-            <div id='player_controls'>
-                <button onclick="playVideo()" id="play_button">PLAY</button>
-                <button onclick="pauseVideo()" id="pause_button">PAUSE</button>
-            </div>
-        </div>
-    </div>
-    </br>
-    </br>
-    <button onclick='video("Whiplas.mp4");'>Whiplas<button onclick="removeVideo()">Remove</button></button></br>
-    <button onclick='video("MORTAL_KOMBAT.mp4");'>MORTAL_KOMBAT <button onclick="removeVideo()">Remove</button></button>
-	</br>
-    </br>
-
-	
-	
-
+    <ul>
+        <li>
+            <span class="movie__link" data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Big Buck Bunny</span class="movie__link">
+                <button class="movie__up-button">↑</button>
+                <button class="movie__down-button">↓</button>
+                <button class="movie__remove-button">Rmove</button>
+        </li>
+    </ul>
 </body>
-<script> 
-document.addEventListener("DOMContentLoaded", function() { start_player(); }, false);
-var player;
-
-function video(name) {
-    player.innerHTML = '';
-    var source = document.createElement('source');
-    player.appendChild(source);
-    source.setAttribute('src', name);
-    player.load();
-    playVideo();
-}
-
-function start_player() {
-    player = document.getElementById('video_player');
-    player.controls = false;
-}
-
-function playVideo() {
-    player.play();
-}
-
-function pauseVideo() {
-    player.pause();
-}
-function removeVideo() {
-    var myobj = document.getElementById("video_player");
-    myobj.remove();
-}
-</script>
-</script> 
 </body> 
 </html>
