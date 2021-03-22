@@ -6,26 +6,30 @@
 	</head>
 <body>
     <section class="movie-list">
-        <ul class="movies-wrapper" multiple>
-            <li class="movie">
+        <h3>Play-lista filmow: </h3>
+        <select class="movies-wrapper" multiple="multiple" style="width:100pt">
+            <option class="movie">
                 <span class="movie__link" data-video="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4">Sample video 1</span class="movie__link">
-            </li>
-            <li class="movie">
+            </option>
+            <option class="movie">
                 <span class="movie__link" data-video="http://techslides.com/demos/sample-videos/small.mp4">Sample video 2</span class="movie__link">
-            </li>
-            <li class="movie">
+            </option>
+            <option class="movie">
                 <span class="movie__link" data-video="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4">Sample video 3</span class="movie__link">
-            </li>
-            <li class="movie">
+                </option>
+            <option class="movie">
                 <span class="movie__link" data-video="http://docs.evostream.com/sample_content/assets/bun33s.mp4">Sample video 4</span class="movie__link">
-            </li>
-            <li class="movie">
+            </option>
+            <option class="movie">
                 <span class="movie__link" data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4">Sample video 5</span class="movie__link">
-            </li>
-            </ul>
+            </option>
+
+        </select>
+        <div class="movies-wrapper">
             <button class="movie__up-button">next</button>
             <button class="movie__down-button">previous</button>
             <button class="movie__remove-button">Delete</button>
+        </div>
         </section>
         <section class="video-player">
             <video autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
