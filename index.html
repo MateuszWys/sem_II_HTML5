@@ -7,11 +7,11 @@
 <body>
     <section class="movie-list">
         <h3>Play-lista filmow: </h3>
-        <select class="movies-wrapper" multiple="multiple" style="width:100pt">
+        <select class="movies-wrapper" multiple="multiple" style="width:100pt" name="movies-wrapper">
             <option class="movie">
                 <span class="movie__link" data-video="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4">Sample video 1</span class="movie__link">
             </option>
-            <option class="movie">
+            <option class="movie" value="">
                 <span class="movie__link" data-video="http://techslides.com/demos/sample-videos/small.mp4">Sample video 2</span class="movie__link">
             </option>
             <option class="movie">
@@ -31,6 +31,7 @@
         <section class="video-player">
             <video autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
         </section>
+
         <section class="movie-form">
             <form class="add-movie__form">
                 <div class="form__item movie-title">
@@ -46,6 +47,7 @@
                 </div>
             </form>
         </section>
-<script src="script_1c.js"></script>
+<script src="script_1c.js">
+</script>
 </body> 
 </html>
