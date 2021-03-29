@@ -9,6 +9,7 @@
     addMovieButton.addEventListener('click', (e) => {
         e.preventDefault();
         createNewMovieElement();
+        
     })
 
     const createNewMovieElement = () => {
