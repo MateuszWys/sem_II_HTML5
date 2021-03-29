@@ -6,7 +6,7 @@
 	</head>
 <body>
     <h3>Play-lista filmow: </h3>
-        <select multiple="multiple" style="width:100pt">
+        <select multiple="multiple" style="width:100pt" id="select2">
             <option onclick='document.getElementById("autovideo").setAttribute("src", "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4")'>
                 Sample video 1
             </option>
@@ -23,8 +23,8 @@
                 Sample video 5
             </option>
         </select></br></br>
-            <button>next</button>
-            <button>previous</button>
+        <button id="up">&uarr;</button>
+        <button id="down">&darr;</button>
             <button>Delete</button>
         
         <video  class="video-player" id="autovideo" autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
@@ -37,4 +37,5 @@
                 <button>Add your video</button>
         </form>
 </body> 
+<script src="script_1c.js"></script>
 </html>

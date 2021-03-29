@@ -3,12 +3,5 @@
 }
 .video-player {
     position: absolute;
-    margin: -20% 40% ;
-}
-.movie, .form__item {
-    padding: 0.5% 0;
-}
-.movie__link {
-    color: lightskyblue;
-    text-decoration: underline;
+    margin: -8% 35% ;
 }
