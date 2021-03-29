@@ -3,6 +3,7 @@
     const playlistWrapper = document.querySelector('.movies-wrapper');
     const newMovieTitle = document.querySelector('#movie-title');
     const newMovieUrl = document.querySelector('#movie-url');
+    const addMovieButton = document.querySelector('.add-movie__button');
     let movies = Array.from(document.querySelectorAll('.movie'));
 
     addMovieButton.addEventListener('click', (e) => {
@@ -11,18 +12,12 @@
     })
 
     const createNewMovieElement = () => {
-        const movieItem = document.createElement('li');
-        movieItem.className = 'movie';
-        const title = document.createElement('span');
-        title.setAttribute('data-video', newMovieUrl.value);
-        title.textContent = newMovieTitle.value;
-        movieItem.appendChild(title);
-        movieItem.appendChild(up);
-        movieItem.appendChild(down);
-        movieItem.appendChild(remove);
-        movies.push(movieItem);
-        initializeLitenersForMovieItem(movieItem);
-        movieItem.setAttribute('data-index', (movies.length - 1).toString());
+        const movieItem = document.createElement('option');
+        movieItem.textContent = newMovieTitle.value;
+        var url = newMovieUrl.value;
+        url = '\"'.concat(url);
+        url = url.concat('\"');
+        movieItem.setAttribute('onclick', `runVideo(${url})`);
         playlistWrapper.appendChild(movieItem);
         newMovieUrl.value = '';
         newMovieTitle.value = '';
@@ -53,7 +48,7 @@
 
     movies.forEach(movie => initializeLitenersForMovieItem(movie));
     renderList();
-})();
+});
 
 function moveUp() {
     var sel = document.getElementById("cols");
