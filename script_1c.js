@@ -9,7 +9,6 @@
     addMovieButton.addEventListener('click', (e) => {
         e.preventDefault();
         createNewMovieElement();
-        
     })
 
     const createNewMovieElement = () => {
@@ -105,3 +104,4 @@
     movies.forEach(movie => initializeLitenersForMovieItem(movie));
     renderList();
 })();
+
