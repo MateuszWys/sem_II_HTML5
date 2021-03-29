@@ -8,20 +8,20 @@
     <section class="movie-list">
         <h3>Play-lista filmow: </h3>
         <select class="movies-wrapper" multiple="multiple" style="width:100pt" name="movies-wrapper">
-            <option class="movie" onclick="window.(this.src)" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4">
+            <option class="movie" onclick="(this.src)" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4">
                 Sample video 1
             </option>
-            <option class="movie" value="">
-                <span class="movie__link" data-video="http://techslides.com/demos/sample-videos/small.mp4">Sample video 2</span class="movie__link">
+            <option class="movie" onclick='document.getElementById("autovideo").setAttribute("src", "http://techslides.com/demos/sample-videos/small.mp4")'>
+                Sample video 2
             </option>
-            <option class="movie">
-                <span class="movie__link" data-video="https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4">Sample video 3</span class="movie__link">
+            <option class="movie" onclick='document.getElementById("autovideo").setAttribute("src", "https://www.radiantmediaplayer.com/media/big-buck-bunny-360p.mp4")'>
+                Sample video 3
                 </option>
-            <option class="movie">
-                <span class="movie__link" data-video="http://docs.evostream.com/sample_content/assets/bun33s.mp4">Sample video 4</span class="movie__link">
+            <option class="movie" onclick='document.getElementById("autovideo").setAttribute("src", "http://docs.evostream.com/sample_content/assets/bun33s.mp4")'>
+                Sample video 4
             </option>
-            <option class="movie">
-                <span class="movie__link" data-video="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4">Sample video 5</span class="movie__link">
+            <option class="movie" onclick='document.getElementById("autovideo").setAttribute("src", "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")'>
+                Sample video 5
             </option>
         </select></br>
             <button class="movie__up-button">next</button>
@@ -29,7 +29,7 @@
             <button class="movie__remove-button">Delete</button>
         </section>
         <section class="video-player">
-            <video autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
+            <video id="autovideo" autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
         </section>
         <section class="movie-form">
             <form class="add-movie__form">
