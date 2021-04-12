@@ -25,9 +25,6 @@ function swapIf(sel,i1,i2) {
         sel[i2].selected = false;
     }
 }
-
-function changeVolume(direction) {
-    if (direction === '+') mediaPlayer.volume += mediaPlayer.volume == 1 ? 0 : 0.1;
-    else mediaPlayer.volume -= (mediaPlayer.volume == 0 ? 0 : 0.1);
-    mediaPlayer.volume = parseFloat(mediaPlayer.volume).toFixed(1);
- }
+function changeVolume(){
+    var sel = document.getElementById("cols");
+}
