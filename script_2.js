@@ -28,6 +28,11 @@ function swapIf(sel,i1,i2) {
 function changeVolume(){
     var video = document.getElementById("autovideo");
     var chngVol = document.getElementById("volume");
+    var volumeProgress = document.getElementById("progress");
     video.volume = chngVol.value/10;
+    
 }
 
+function changeTime(){
+
+}
