@@ -6,7 +6,7 @@
 	</head>
 <body>
     <h3>Play-lista filmow: </h3>
-            <select multiple="multiple" style="width:100pt" id="cols" controls>
+            <select multiple="multiple" style="width:100pt" id="cols">
                 <option onclick='document.getElementById("autovideo").setAttribute("src", "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4")'>
                     Sample video 1
                 </option>
@@ -27,13 +27,12 @@
         <button onclick="moveDown()">&darr;</button>
         <button onclick="remove()">Delete</button>
 
-        <p>Audio settings:</p>
-            <div>
-                <input type="range" id="cols" name="volume"
-                        min="0" max="10">
-                <label for="cols">Volume</label>
-            </div>
-    
+        <form>
+            <input type="range" id="volume" onchange="changeVolume()" name="volume" min="0" max="10">
+            <label for="volume">Volume</label></br>
+            <input type="range" id="progress" onchange="changeVolume()" name="volume" min="0" max="10">
+            <label for="progress">Progress</label>
+        </form>
 
         <video  class="video-player" id="autovideo" autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
         <form class="movie-form">

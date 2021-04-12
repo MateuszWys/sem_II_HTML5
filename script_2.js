@@ -26,5 +26,8 @@ function swapIf(sel,i1,i2) {
     }
 }
 function changeVolume(){
-    var sel = document.getElementById("cols");
+    var video = document.getElementById("autovideo");
+    var chngVol = document.getElementById("volume");
+    video.volume = chngVol.value/10;
 }
+
