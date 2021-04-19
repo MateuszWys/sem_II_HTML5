@@ -28,14 +28,14 @@
         <button onclick="remove()">Delete</button>
 
         <form>
-            <input type="range" id="volume" onchange="changeVolume()" name="volume" min="0" max="100">
+            <input type="range" id="volume" onchange="changeVolume()" name="volume" min="0" max="100" value="100">
             <label for="volume">Volume</label></br>
-            <input type="range" id="progress" onchange="changeVolume()">Progress volume</progress> 
+            <input type="range" id="progress" onchange="changeVolume()" value="100">Progress volume</progress> 
         </form>
         <form>
-            <input type="range" id="position" onchange="changeTime()" name="position" min="0" max="100">
+            <input type="range" id="position" onchange="changeTime()" name="position" min="0" max="100" value="0">
             <label for="position">Time</label></br>
-            <input type="range" id="progress_position" onchange="changeTime()">Progress time</progress> 
+            <input type="range" id="progress_position" onchange="changeTime()" value="0">Progress time</progress> 
         </form>
 
         <button onclick="FullScreen()">Full Screen</button>
