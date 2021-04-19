@@ -32,17 +32,15 @@ function changeVolume(){
     video.volume = chngVol.value/100;
     volumeProgress.value=chngVol.value
 }
-
 function changeTime(){
     var video = document.getElementById("autovideo");
     var input = document.getElementById("position");
     var progress_bar = document.getElementById("progress_position");
     var duration = video.duration;
     if (input.value > 0)
-        input.value = video.currentTime / duration * 100
+        video.currentTime = (input.value) / 100 * duration;
     progress_bar.value = input.value;
 };
-
 function FullScreen(){
     var video = document.getElementById("autovideo");
     if (video.requestFullscreen) {
@@ -54,7 +52,4 @@ function FullScreen(){
     } else if (video.msRequestFullscreen) { 
         video.msRequestFullscreen();
     }
-}
-function CinemaMode(){
-    var elem = document.getElementById("autovideo").widh = "1000";
 }
