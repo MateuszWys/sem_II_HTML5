@@ -44,14 +44,17 @@ function changeTime(){
 };
 
 function FullScreen(){
-    var elem = document.getElementById("autovideo");
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { 
-      elem.msRequestFullscreen();
+    var video = document.getElementById("autovideo");
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { 
+        video.msRequestFullscreen();
     }
+}
+function CinemaMode(){
+    var elem = document.getElementById("autovideo").widh = "1000";
 }
