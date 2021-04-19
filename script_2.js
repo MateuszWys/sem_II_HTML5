@@ -34,5 +34,11 @@ function changeVolume(){
 }
 
 function changeTime(){
-
-}
+    var video = document.getElementById("autovideo");
+    var input = document.getElementById("position");
+    var progress_bar = document.getElementById("progress_position");
+    var duration = video.duration;
+    if (input.value > 0)
+        input.value = video.currentTime / duration * 100
+    progress_bar.value = input.value;
+};

@@ -32,7 +32,11 @@
             <label for="volume">Volume</label></br>
             <input type="range" id="progress" onchange="changeVolume()">Progress volume</progress> 
         </form>
-        
+        <form>
+            <input type="range" id="position" onchange="changeTime()" name="position" min="0" max="100">
+            <label for="position">Time</label></br>
+            <input type="range" id="progress_position" onchange="changeTime()">Progress time</progress> 
+        </form>
 
         <video  class="video-player" id="autovideo" autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
         <form class="movie-form">
