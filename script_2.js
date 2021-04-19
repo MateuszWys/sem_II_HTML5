@@ -29,8 +29,8 @@ function changeVolume(){
     var video = document.getElementById("autovideo");
     var chngVol = document.getElementById("volume");
     var volumeProgress = document.getElementById("progress");
-    video.volume = chngVol.value/10;
-    
+    video.volume = chngVol.value/100;
+    volumeProgress.value=chngVol.value
 }
 
 function changeTime(){
