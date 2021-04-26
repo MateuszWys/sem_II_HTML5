@@ -54,10 +54,20 @@ function FullScreen(){
     }
 }
 
-function SaveTime(){
-    localStorage.setItem("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4", currentTime)
-    localStorage.setItem("http://techslides.com/demos/sample-videos/small.mp4", currentTime)
-    localStorage.setItem("http://docs.evostream.com/sample_content/assets/bun33s.mp4", currentTime)
-    localStorage.setItem("http://docs.evostream.com/sample_content/assets/bun33s.mp4", currentTime)
-    localStorage.setItem("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4", currentTime)
+function SaveTime(link){
+    var video = document.getElementById("autovideo");
+    window.localStorage.setItem(video.src, video.currentTime);
+    document.getElementById('autovideo').setAttribute('src', link)
+    video.currentTime = window.localStorage.getItem(video.src);
+    document.getElementById('autovideo').muted = 0;
+}
+
+window.onbeforeunload = function() {
+    var video = document.getElementById("autovideo");
+    window.localStorage.setItem(video.src, video.currentTime);
+}
+
+window.onload = function() {
+    var video = document.getElementById("autovideo");
+    video.currentTime = window.localStorage.getItem(video.src);
 }
