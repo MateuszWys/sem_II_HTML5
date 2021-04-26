@@ -55,5 +55,9 @@ function FullScreen(){
 }
 
 function SaveTime(){
-    localStorage[autovideo.currentTime] = document.getElementById("autovideo").currentTime;
+    localStorage.setItem("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4", currentTime)
+    localStorage.setItem("http://techslides.com/demos/sample-videos/small.mp4", currentTime)
+    localStorage.setItem("http://docs.evostream.com/sample_content/assets/bun33s.mp4", currentTime)
+    localStorage.setItem("http://docs.evostream.com/sample_content/assets/bun33s.mp4", currentTime)
+    localStorage.setItem("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4", currentTime)
 }
