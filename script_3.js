@@ -54,6 +54,7 @@ function FullScreen(){
     }
 }
 
-window.onunload = function () {
-    window.localstorage[myVideo.currentTime] = document.getElementById("autovideo").currentTime;
+function SaveTime(){
+    localStorage.video
+
 }
