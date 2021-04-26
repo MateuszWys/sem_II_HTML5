@@ -53,3 +53,7 @@ function FullScreen(){
         video.msRequestFullscreen();
     }
 }
+
+window.onunload = function () {
+    window.localstorage[myVideo.currentTime] = document.getElementById("autovideo").currentTime;
+}
