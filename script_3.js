@@ -80,3 +80,19 @@ function PauseVideo(){
     var video = document.getElementById("autovideo");
     video.pause()
 }
+function NextVideo(){
+    var video = document.getElementById("autovideo");
+    video.pause();
+    video.currentTime=0;
+    video.src = +videoList[index+1];
+    video.currentVideoName=videoList[index+1];
+    video.play();
+}
+function BeforeVideo(){
+    var video = document.getElementById("autovideo");
+    video.pause();
+    video.currentTime=0;
+    video.src = +videoList[index-1];
+    window.currentVideoName=videoList[index-1];
+    video.play();
+}
