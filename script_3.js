@@ -80,19 +80,67 @@ function PauseVideo(){
     var video = document.getElementById("autovideo");
     video.pause()
 }
+
+function removeParentheses(string) {
+    var result = string.toString().replaceAll('\"', '');
+    return result;
+}
+
+function getParamNames(func) {
+    var ARGUMENT_NAMES = /([^\s,]+)/g;
+    var result = func.slice(func.indexOf('(') + 1, func.indexOf(')')).match(ARGUMENT_NAMES);
+    if (result === null)
+        result = [];
+    return result;
+}
+
 function NextVideo(){
     var video = document.getElementById("autovideo");
-    video.pause();
-    video.currentTime=0;
-    video.src = +videoList[index+1];
-    video.currentVideoName=videoList[index+1];
-    video.play();
+    var arr = [];
+    var lis = document.getElementsByTagName("option");
+    console.log(lis);
+    current_video_index = 0;
+    for (var i = 0; i < lis.length; ++i) {
+        if (lis[i].outerHTML.includes(video.src)) {
+            current_video_index = i;
+        }
+        if (lis[i].selected) {
+            arr.push(lis[i]);
+        }
+    }
+    if (current_video_index < arr.length - 1) {
+        next_video_link = removeParentheses(getParamNames(arr[current_video_index + 1].getAttribute('onclick')));
+        video.src = next_video_link;
+        current_video_index += 1;
+    } else {
+        next_video_link = removeParentheses(getParamNames(arr[0].getAttribute('onclick')));
+        video.src = next_video_link;
+        current_video_index = 0;
+    }
+    video.load();
+
 }
 function BeforeVideo(){
     var video = document.getElementById("autovideo");
-    video.pause();
-    video.currentTime=0;
-    video.src = +videoList[index-1];
-    window.currentVideoName=videoList[index-1];
-    video.play();
+    var arr = [];
+    var lis = document.getElementsByTagName("option");
+    current_video_index = 0;
+    for (var i = 0; i < lis.length; ++i) {
+        if (lis[i].outerHTML.includes(video.src)) {
+            current_video_index = i;
+        }
+        if (lis[i].selected) {
+            arr.push(lis[i]);
+        }
+    }
+    if (current_video_index == 0) {
+        next_video_link = removeParentheses(getParamNames(arr[arr.length - 1].getAttribute('onclick')));
+        video.src = next_video_link;
+        current_video_index = arr.length - 1;
+    } else {
+        next_video_link = removeParentheses(getParamNames(arr[current_video_index - 1].getAttribute('onclick')));
+        video.src = next_video_link;
+        current_video_index -= 1;
+    }
+    video.load();
 }
