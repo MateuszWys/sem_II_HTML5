@@ -71,3 +71,12 @@ window.onload = function() {
     var video = document.getElementById("autovideo");
     video.currentTime = window.localStorage.getItem(video.src);
 }
+
+function PlayVideo(){
+    var video = document.getElementById("autovideo");
+    video.play()
+}
+function PauseVideo(){
+    var video = document.getElementById("autovideo");
+    video.pause()
+}
