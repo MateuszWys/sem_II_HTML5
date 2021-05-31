@@ -1,58 +1,70 @@
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-        <link rel="stylesheet" type="text/css" href="zad2.css">
-		<title>Multimedia,animacja i obsluga urzadzen - HTML 5 </title>
-	</head>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" type="text/css" href="zad2.css">
+    <title>Multimedia,animacja i obsluga urzadzen - HTML 5 </title>
+</head>
+
 <body>
     <h3>Play-lista filmow: </h3>
-            <select multiple="multiple" style="width:100pt" id="cols">
-                <option onclick='SaveTime("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4")'>
-                    Sample video 1
-                </option>
-                <option onclick='SaveTime("http://techslides.com/demos/sample-videos/small.mp4")'>
-                    Sample video 2
-                </option>
-                <option onclick='SaveTime("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")'>
-                    Sample video 3
-                    </option>
-                <option onclick='SaveTime("http://docs.evostream.com/sample_content/assets/bun33s.mp4")'>
-                    Sample video 4
-                </option>
-                <option onclick='SaveTime("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")'>
-                    Sample video 5
-                </option>
-            </select></br></br>
-        <button onclick="moveUp()">&uarr;</button>
-        <button onclick="moveDown()">&darr;</button>
-        <button onclick="remove()">Delete</button>
+    <select multiple="multiple" style="width:100pt" id="cols">
+        <option onclick='SaveTime("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4")'>
+            Sample video 1
+        </option>
+        <option onclick='SaveTime("http://techslides.com/demos/sample-videos/small.mp4")'>
+            Sample video 2
+        </option>
+        <option onclick='SaveTime("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")'>
+            Sample video 3
+        </option>
+        <option onclick='SaveTime("http://docs.evostream.com/sample_content/assets/bun33s.mp4")'>
+            Sample video 4
+        </option>
+        <option onclick='SaveTime("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")'>
+            Sample video 5
+        </option>
+    </select></br></br>
+    <button onclick="moveUp()">&uarr;</button>
+    <button onclick="moveDown()">&darr;</button>
+    <button onclick="remove()">Delete</button><br><br><br>
+    <button onclick='saveList()'>Save Playlist</button><br><br>
+    <div>
+        Select file with video list
+        <button onclick='loadList()'>add video list</button>
+    </div>
 
-        <form>
-            <input type="range" id="volume" onchange="changeVolume()" name="volume" min="0" max="100" value="100">
-            <label for="volume">Volume</label></br>
-            <input type="range" id="progress" onchange="changeVolume()" value="100">Progress volume</progress> 
-        </form>
-        <form>
-            <input type="range" id="position" onchange="changeTime()" name="position" min="0" max="100" value="0">
-            <label for="position">Time</label></br>
-            <input type="range" id="progress_position" onchange="changeTime()" value="0">Progress time</progress> 
-        </form>
+    <form>
+        <input type="range" id="volume" onchange="changeVolume()" name="volume" min="0" max="100" value="100">
+        <label for="volume">Volume</label></br>
+        <input type="range" id="progress" onchange="changeVolume()" value="100">Progress volume</progress>
+    </form>
+    <form>
+        <input type="range" id="position" onchange="changeTime()" name="position" min="0" max="100" value="0">
+        <label for="position">Time</label></br>
+        <input type="range" id="progress_position" onchange="changeTime()" value="0">Progress time</progress>
+    </form>
 
-        <button onclick="FullScreen()">Full Screen</button>
-        <button onclick='document.getElementById("autovideo").setAttribute("width", 800, "height", 600)'>Cinema Mode</button></br>
-        <button onclick="PlayVideo()">Play</button>
-        <button onclick="PauseVideo()">Pause</button></br>
-        <button onclick="NextVideo()">next video</button>
-        <button onclick="BeforeVideo()">before video</button>
+    <button onclick="FullScreen()">Full Screen</button>
+    <button onclick='document.getElementById("autovideo").setAttribute("width", 800, "height", 600)'>Cinema
+        Mode</button></br>
+    <button onclick="PlayVideo()">Play</button>
+    <button onclick="PauseVideo()">Pause</button></br>
+    <button onclick="NextVideo()">next video</button>
+    <button onclick="BeforeVideo()">before video</button>
 
-        <video  class="video-player" id="autovideo" autoplay controls width="480" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
-        <form class="movie-form">
-                <label for="movie-title">Video title: </label>
-                <input type="text" name="movie-title" id="movie-title" value="Sample video 6" required></br></br>
-                <label for="movie-url">Link to video: </label>
-                <input type="text" name="movie-url" id="movie-url" value="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" required>
-                <button class="add-movie__button">Add your video</button>
-        </form>
-</body> 
-<script src="script_3.js"></script>
+
+    <video class="video-player" id="autovideo" autoplay controls width="480"
+        src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"></video>
+    <form class="movie-form">
+        <label for="movie-title">Video title: </label>
+        <input type="text" name="movie-title" id="movie-title" value="Sample video 6" required></br></br>
+        <label for="movie-url">Link to video: </label>
+        <input type="text" name="movie-url" id="movie-url" value="https://samplelib.com/lib/preview/mp4/sample-5s.mp4"
+            required>
+        <button class="add-movie__button">Add your video</button>
+    </form>
+</body>
+<script src="script_4_1.js"></script>
+
 </html>
