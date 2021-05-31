@@ -159,9 +159,12 @@ function saveList() {
         listofLinks.push(curr);
     }
     var textDoc = document.createElement('a');
-
     textDoc.href = 'data:attachment/text,' + encodeURI(listofLinks.join('\n'));
     textDoc.target = '_blank';
     textDoc.download = 'Videos_list.txt';
     textDoc.click()
+}
+
+function loadList(){
+    
 }
