@@ -1,11 +1,10 @@
-.movie-list,
-.movie-form {
-  margin: 5% 0;
+.movie-list, .movie-form  {
+    margin: 5% 0;
 }
 .video-player {
-  position: absolute;
-  margin: -15% 30%;
+    position: absolute;
+    margin: -15% 30% ;
 }
-.add-movie__button {
-  cursor: pointer;
+.add-movie__button{
+    cursor: pointer;
 }
